@@ -46,6 +46,15 @@ var _ = Describe("Integration", func() {
 
 		session, err := gexec.Start(fizzbuzzCommand, GinkgoWriter, GinkgoWriter)
 		Expect(err).NotTo(HaveOccurred())
-		Eventually(session.Out).Should(gbytes.Say("arguments must be numbers\n"))
+		Eventually(session.Out).Should(gbytes.Say("input is not a number, skipping\n"))
+	})
+
+	It("when there are several command line argument, it processes them all", func() {
+		args := []string{"1", "2", "3", "4", "5"}
+		fizzbuzzCommand = exec.Command(fizzbuzzBinary, args...)
+
+		session, err := gexec.Start(fizzbuzzCommand, GinkgoWriter, GinkgoWriter)
+		Expect(err).NotTo(HaveOccurred())
+		Eventually(session.Out).Should(gbytes.Say("1\n2\nfizz\n4\nbuzz\n"))
 	})
 })

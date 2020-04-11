@@ -9,13 +9,15 @@ import (
 )
 
 func main() {
-	numberAsString := os.Args[1]
+	numbersAsStrings := os.Args[1:]
 
-	number, err := strconv.Atoi(numberAsString)
-	if err != nil {
-		fmt.Println("arguments must be numbers")
-		os.Exit(1)
+	for _, value := range numbersAsStrings {
+		number, err := strconv.Atoi(value)
+		if err != nil {
+			fmt.Println("input is not a number, skipping")
+			continue
+		}
+
+		fmt.Println(fizzbuzz.Says(number))
 	}
-
-	fmt.Println(fizzbuzz.Says(number))
 }
