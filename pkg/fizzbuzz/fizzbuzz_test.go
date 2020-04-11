@@ -4,7 +4,7 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	"github.com/callisto13/fizzbuzz"
+	"github.com/callisto13/fizzbuzz/pkg/fizzbuzz"
 )
 
 var _ = Describe("Fizzbuzz", func() {
