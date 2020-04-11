@@ -11,7 +11,11 @@ import (
 func main() {
 	numberAsString := os.Args[1]
 
-	number, _ := strconv.Atoi(numberAsString)
+	number, err := strconv.Atoi(numberAsString)
+	if err != nil {
+		fmt.Println("arguments must be numbers")
+		os.Exit(1)
+	}
 
 	fmt.Println(fizzbuzz.Says(number))
 }

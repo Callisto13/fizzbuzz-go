@@ -40,4 +40,12 @@ var _ = Describe("Integration", func() {
 		Expect(err).NotTo(HaveOccurred())
 		Eventually(session.Out).Should(gbytes.Say("buzz\n"))
 	})
+
+	It("when the command line argument is not a number, it prints an error", func() {
+		fizzbuzzCommand = exec.Command(fizzbuzzBinary, "!")
+
+		session, err := gexec.Start(fizzbuzzCommand, GinkgoWriter, GinkgoWriter)
+		Expect(err).NotTo(HaveOccurred())
+		Eventually(session.Out).Should(gbytes.Say("arguments must be numbers\n"))
+	})
 })
