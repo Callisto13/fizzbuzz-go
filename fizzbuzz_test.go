@@ -12,5 +12,9 @@ var _ = Describe("Fizzbuzz", func() {
 		It("divisible by 3", func() {
 			Expect(fizzbuzz.IsDivisibleByThree(3)).To(BeTrue())
 		})
+
+		It("knows when a number is NOT divisible by 3", func() {
+			Expect(fizzbuzz.IsDivisibleByThree(1)).To(BeFalse())
+		})
 	})
 })

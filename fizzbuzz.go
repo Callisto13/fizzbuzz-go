@@ -1,5 +1,5 @@
 package fizzbuzz
 
-func IsDivisibleByThree(number int) bool {
-	return true
+func IsDivisibleByThree(num int) bool {
+	return num%3 == 0
 }
