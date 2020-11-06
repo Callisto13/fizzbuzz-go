@@ -15,7 +15,7 @@ func TestIntegration(t *testing.T) {
 
 	BeforeSuite(func() {
 		var err error
-		fizzbuzzBinary, err = gexec.Build("github.com/callisto13/fizzbuzz", "-mod=vendor")
+		fizzbuzzBinary, err = gexec.Build("github.com/callisto13/fizzbuzz-go", "-mod=vendor")
 		Expect(err).NotTo(HaveOccurred())
 	})
 

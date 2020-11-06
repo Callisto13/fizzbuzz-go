@@ -1,8 +1,8 @@
-module github.com/callisto13/fizzbuzz
+module github.com/callisto13/fizzbuzz-go
 
-go 1.13
+go 1.15
 
 require (
-	github.com/onsi/ginkgo v1.12.0
-	github.com/onsi/gomega v1.9.0
+	github.com/onsi/ginkgo v1.14.2
+	github.com/onsi/gomega v1.10.3
 )

@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/callisto13/fizzbuzz/pkg/fizzbuzz"
+	"github.com/callisto13/fizzbuzz-go/pkg/fizzbuzz"
 )
 
 func main() {
